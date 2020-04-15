@@ -11,8 +11,8 @@ class Player {
   Sprite house;
   Player(this.gameController) {
     house = Sprite('house.png');
-    maxHealth = 5000;
-    currentHealth = 5000;
+    maxHealth = 200;
+    currentHealth = 200;
     final size = gameController.tileSize * 1.5;
     playerRect = Rect.fromLTWH(
       gameController.screenSize.width / 2 - size / 2,

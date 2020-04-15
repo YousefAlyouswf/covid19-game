@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "745853258936",
+    "firebase_url": "https://gamedots-62988.firebaseio.com",
+    "project_id": "gamedots-62988",
+    "storage_bucket": "gamedots-62988.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745853258936:android:f5f8c1d88406729c29384d",
+        "android_client_info": {
+          "package_name": "yousef.alyouswf.test_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745853258936-055v4rcm6c1ls8fuje94g5ciruu1ecn2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8g-I2kiJKRpRY_3H3dmS_TtSp2LxdAOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745853258936-055v4rcm6c1ls8fuje94g5ciruu1ecn2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

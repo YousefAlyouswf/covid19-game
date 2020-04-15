@@ -1,28 +1,26 @@
-import 'package:flame/flame.dart';
-import 'package:flame/util.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
+import 'package:ipfinder/ipfinder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'game_controller.dart';
+import 'package:test_game/start_app.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  Util flameUtil = Util();
-  await flameUtil.fullScreen();
-  await Flame.images.loadAll(<String>[
-    'covid1.png',
-    'house.png',
-    'covid2.png',
-    'covid3.png',
-    'wash.png',
-  ]);
-  await flameUtil.setOrientation(DeviceOrientation.portraitUp);
-  SharedPreferences storage = await SharedPreferences.getInstance();
-  GameController gameController = GameController(storage);
-  runApp(gameController.widget);
+  try {
+    WidgetsFlutterBinding.ensureInitialized();
 
-  TapGestureRecognizer tapper = TapGestureRecognizer();
-  tapper.onTapDown = gameController.onTapDown;
-  flameUtil.addGestureRecognizer(tapper);
+    Ipfinder ipfinder = Ipfinder('b22bfa0edbe8bf00fe3cde41e567fa824fc33688');
+    IpResponse auth = await ipfinder.authentication();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('country', auth.countryName.toString());
+  } catch (e) {}
+
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: StartApp(),
+    );
+  }
 }

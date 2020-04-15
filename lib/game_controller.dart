@@ -11,7 +11,6 @@ import 'package:test_game/components/health_bar.dart';
 import 'package:test_game/components/high_score.dart';
 import 'package:test_game/components/score_text.dart';
 import 'package:test_game/components/wash.dart';
-import 'components/start_button.dart';
 import 'state.dart';
 import 'components/player.dart';
 
@@ -28,7 +27,6 @@ class GameController extends Game {
   ScoerText scoerText;
   StateScreen state;
   HighScore highScore;
-  StartButton startButton;
   Wash wash;
   GameController(this.storage) {
     initialize();
@@ -45,7 +43,6 @@ class GameController extends Game {
     score = 0;
     scoerText = ScoerText(this);
     highScore = HighScore(this);
-    startButton = StartButton(this);
     wash = Wash(this);
   }
 
@@ -53,12 +50,13 @@ class GameController extends Game {
     Rect background = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
     Paint backgroundPaint = Paint()..color = Color(0xFFFAFAFA);
     canvas.drawRect(background, backgroundPaint);
-    player.render(canvas);
+
     if (state == StateScreen.menu) {
       highScore.render(canvas);
-    //  startButton.render(canvas);
+      //  startButton.render(canvas);
       wash.render(canvas);
     } else {
+      player.render(canvas);
       enemies.forEach((Enemy enemy) {
         enemy.render(canvas);
       });
@@ -70,7 +68,6 @@ class GameController extends Game {
   void update(double t) {
     if (state == StateScreen.menu) {
       highScore.update(t);
-      startButton.update(t);
     } else {
       enemySpawners.update(t);
       enemies.forEach((Enemy enemy) {

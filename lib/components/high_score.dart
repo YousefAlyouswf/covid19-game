@@ -15,7 +15,12 @@ class HighScore {
   }
 
   void render(Canvas c) {
-    textPainter.paint(c, position);
+    try {
+     
+      textPainter.paint(c, position);
+    } catch (e) {
+      print("error");
+    }
   }
 
   void update(double t) {
