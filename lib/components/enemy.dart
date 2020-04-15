@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flame/sprite.dart';
 
 import '../game_controller.dart';

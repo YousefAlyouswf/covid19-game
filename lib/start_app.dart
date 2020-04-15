@@ -8,7 +8,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test_game/game_controller.dart';
 
-class StartApp extends StatelessWidget {
+class StartApp extends StatefulWidget {
+  @override
+  _StartAppState createState() => _StartAppState();
+}
+
+class _StartAppState extends State<StartApp> {
   TextEditingController controllerPhone = TextEditingController();
 
   void getUserName(BuildContext context) async {
@@ -278,7 +283,6 @@ class _SystemPadding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mediaQuery = MediaQuery.of(context);
     return new AnimatedContainer(
         duration: const Duration(milliseconds: 300), child: child);
   }

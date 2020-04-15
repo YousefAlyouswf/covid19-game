@@ -3,6 +3,8 @@ import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:test_game/game_controller.dart';
 
+import '../main.dart';
+
 class Player {
   final GameController gameController;
   int maxHealth;
@@ -12,8 +14,8 @@ class Player {
   Sprite house;
   Player(this.gameController) {
     house = Sprite('house.png');
-    maxHealth = 200;
-    currentHealth = 200;
+    maxHealth = 3000;
+    currentHealth = 3000;
     final size = gameController.tileSize * 1.5;
     playerRect = Rect.fromLTWH(
       gameController.screenSize.width / 2 - size / 2,
@@ -33,7 +35,7 @@ class Player {
     //  print(currentHealth);
     if (!isDead && currentHealth <= 0) {
       isDead = true;
-      gameController.initialize();
+
       String name = gameController.storage.getString('name');
       int hightScore = gameController.storage.getInt('highScore');
       String code = gameController.storage.getString('code');
@@ -68,6 +70,7 @@ class Player {
           }
         }
       }
+      runApp(MyApp());
     }
   }
 }

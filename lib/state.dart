@@ -1,4 +1,4 @@
-enum StateScreen{
+enum StateScreen {
   menu,
   playing,
 }
