@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/cupertino.dart';
@@ -53,8 +54,10 @@ class GameController extends Game {
 
     if (state == StateScreen.menu) {
       highScore.render(canvas);
-      //  startButton.render(canvas);
+
       wash.render(canvas);
+
+     
     } else {
       player.render(canvas);
       enemies.forEach((Enemy enemy) {

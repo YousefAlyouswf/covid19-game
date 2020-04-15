@@ -36,5 +36,6 @@ class HighScore {
     position = Offset(
         (gameController.screenSize.width / 2) - (textPainter.width / 2),
         (gameController.screenSize.height * 0.2) - (textPainter.height / 2));
+        
   }
 }

@@ -28,6 +28,7 @@ dependencies:
   ipfinder: ^1.0.1
   country_icons: ^1.1.1
   cloud_firestore: ^0.13.4+2
+  fluttertoast: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +53,9 @@ flutter:
     - assets/images/covid3.png
     - assets/images/wash.png
     - assets/images/house.png
+    - assets/images/crown.png
+    - assets/images/crown2.png
+    - assets/images/crown3.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

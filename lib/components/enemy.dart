@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flame/sprite.dart';
 
 import '../game_controller.dart';
@@ -27,6 +28,8 @@ class Enemy {
       gameController.tileSize * 1.2,
       gameController.tileSize * 1.2,
     );
+
+   
   }
   void render(Canvas c) {
     // Color color;
@@ -47,7 +50,6 @@ class Enemy {
     }
     // Paint enemyColor = Paint()..color = color;
     //c.drawRect(enemyRect, enemyColor);
-    
   }
 
   void update(double t) {

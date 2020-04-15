@@ -11,6 +11,7 @@ void main() async {
     IpResponse auth = await ipfinder.authentication();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('country', auth.countryName.toString());
+    prefs.setString('code', auth.countryCode.toLowerCase());
   } catch (e) {}
 
   runApp(MyApp());

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:test_game/game_controller.dart';
@@ -28,11 +29,45 @@ class Player {
     house.renderRect(c, playerRect);
   }
 
-  void update(double t) {
+  Future<void> update(double t) async {
     //  print(currentHealth);
     if (!isDead && currentHealth <= 0) {
       isDead = true;
       gameController.initialize();
+      String name = gameController.storage.getString('name');
+      int hightScore = gameController.storage.getInt('highScore');
+      String code = gameController.storage.getString('code');
+      if ((hightScore ?? 0) <= gameController.score) {
+        if (hightScore == null || gameController.score == null) {
+          return;
+        } else {
+          bool isToken = false;
+          String id;
+          final QuerySnapshot secondCaseResult = await Firestore.instance
+              .collection('score')
+              .where('name', isEqualTo: name)
+              .getDocuments();
+          final List<DocumentSnapshot> documentsOfsecondCase =
+              secondCaseResult.documents;
+          documentsOfsecondCase.forEach((data) {
+            isToken = true;
+            id = data.documentID;
+          });
+          if (!isToken) {
+            Firestore.instance.collection('score').document().setData({
+              'name': name,
+              'score': hightScore,
+              'code': code,
+            });
+          } else {
+            Firestore.instance.collection('score').document(id).updateData({
+              'name': name,
+              'score': hightScore,
+              'code': code,
+            });
+          }
+        }
+      }
     }
   }
 }
