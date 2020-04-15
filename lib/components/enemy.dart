@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flame/sprite.dart';
+
 import '../game_controller.dart';
 
 class Enemy {
@@ -9,8 +11,13 @@ class Enemy {
   double speed;
   Rect enemyRect;
   bool isDead = false;
-
+  Sprite covid1;
+  Sprite covid2;
+  Sprite covid3;
   Enemy(this.gameController, double x, double y) {
+    covid1 = Sprite('covid1.png');
+    covid2 = Sprite('covid2.png');
+    covid3 = Sprite('covid3.png');
     health = 3;
     damage = 1;
     speed = gameController.tileSize * 2;
@@ -22,23 +29,25 @@ class Enemy {
     );
   }
   void render(Canvas c) {
-    Color color;
+    // Color color;
+
     switch (health) {
       case 1:
-        color = Color(0xFFFF7F7F);
+        covid3.renderRect(c, enemyRect);
         break;
       case 2:
-        color = Color(0xFFFF4C4C);
+        covid2.renderRect(c, enemyRect);
         break;
       case 3:
-        color = Color(0xFFFF4500);
+        covid1.renderRect(c, enemyRect);
         break;
       default:
-        color = Color(0xFFFF0000);
+        covid1.renderRect(c, enemyRect);
         break;
     }
-    Paint enemyColor = Paint()..color = color;
-    c.drawRect(enemyRect, enemyColor);
+    // Paint enemyColor = Paint()..color = color;
+    //c.drawRect(enemyRect, enemyColor);
+    
   }
 
   void update(double t) {

@@ -1,3 +1,4 @@
+import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:test_game/game_controller.dart';
 
@@ -7,10 +8,11 @@ class Player {
   int currentHealth;
   Rect playerRect;
   bool isDead = false;
-
+  Sprite house;
   Player(this.gameController) {
-    maxHealth = 300;
-    currentHealth = 300;
+    house = Sprite('house.png');
+    maxHealth = 5000;
+    currentHealth = 5000;
     final size = gameController.tileSize * 1.5;
     playerRect = Rect.fromLTWH(
       gameController.screenSize.width / 2 - size / 2,
@@ -21,8 +23,9 @@ class Player {
   }
 
   void render(Canvas c) {
-    Paint color = Paint()..color = Color(0xFF0000FF);
-    c.drawRect(playerRect, color);
+    // Paint color = Paint()..color = Color(0xFF0000FF);
+    // c.drawRect(playerRect, color);
+    house.renderRect(c, playerRect);
   }
 
   void update(double t) {
