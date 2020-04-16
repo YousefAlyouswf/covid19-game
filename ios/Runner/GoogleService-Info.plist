@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>745853258936-me5ot96m9o065etpmss55uoln4id3o5k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.745853258936-me5ot96m9o065etpmss55uoln4id3o5k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBuMfiIbsgd3LBibX8Me5ADIEDxaBtCF14</string>
+	<key>GCM_SENDER_ID</key>
+	<string>745853258936</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>yousef.alyouswf.covid</string>
+	<key>PROJECT_ID</key>
+	<string>gamedots-62988</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gamedots-62988.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:745853258936:ios:1863dfac25f0756329384d</string>
+	<key>DATABASE_URL</key>
+	<string>https://gamedots-62988.firebaseio.com</string>
+</dict>
+</plist>

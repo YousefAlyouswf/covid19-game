@@ -38,7 +38,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon" 
   ios: true
-  image_path: "assets/images/covid1.png"
+  image_path: "assets/images/covid_icon.jpg"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -61,6 +61,7 @@ flutter:
     - assets/images/crown.png
     - assets/images/crown2.png
     - assets/images/crown3.png
+    - assets/images/covid_icon.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
